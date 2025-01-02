@@ -1,0 +1,138 @@
+.movies {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    background-color: black;
+}
+
+.item {
+    margin: 1rem;
+    font-size: 1rem;
+    border: 2px solid rgb(250, 248, 248);
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.item img {
+    width: 100%; /* Ensure the image spans the width of its container */
+    height: auto; /* Maintain the aspect ratio */
+    object-fit: cover;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.searchbar {
+    box-sizing: border-box;
+    padding: 10px;
+    width: 40vw;
+    font-size: 1.3rem;
+    border: 3px solid black;
+    border-radius: 5px;
+    outline: none;
+    transition: border 0.3s ease, background-color 0.3s ease;
+}
+
+.searchbar:focus {
+    border-color: #007BFF;
+    background-color: #f8f9fa;
+}
+
+.loc {
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    font-size: 1.5rem;
+    font-family: sans-serif;
+    font-weight: bolder;
+}
+
+.foot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f1f1f1;
+}
+
+.footdata {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bolder;
+    padding: 10px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .movies {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    .item {
+        font-size: 0.95rem;
+    }
+
+    .searchbar {
+        width: 50vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .movies {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .item {
+        font-size: 0.9rem;
+    }
+
+    .searchbar {
+        width: 60vw;
+        font-size: 1.1rem;
+    }
+
+    .loc {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .movies {
+        grid-template-columns: 1fr; /* Single column for smaller screens */
+    }
+
+    .item {
+        font-size: 0.85rem;
+    }
+
+    .searchbar {
+        width: 80vw;
+        font-size: 1rem;
+        position: relative;
+        left: 10%;
+    }
+
+    .loc {
+        font-size: 1rem;
+        left: 10px;
+    }
+
+    .footdata {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
